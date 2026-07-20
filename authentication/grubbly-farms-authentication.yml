@@ -1,0 +1,40 @@
+generated: '2026-07-19'
+method: searched
+source: https://grubblyfarms.com/.well-known/openid-configuration
+docs: https://account.grubblyfarms.com/
+summary:
+  types: [oauth2, openIdConnect]
+  oauth2_flows: [authorizationCode]
+  pkce: S256
+  token_endpoint_auth_methods: [client_secret_basic]
+  id_token_signing_alg: [RS256]
+  notes: >-
+    Grubbly Farms authenticates customers through the Shopify Customer Account identity
+    surface, advertised via OpenID Connect / OAuth 2.0 Authorization Server Metadata
+    (RFC 8414) discovery documents. Authorization-code flow with PKCE (S256). This governs
+    customer-account and customer-account-mcp API access; the anonymous Storefront MCP
+    server at /api/mcp does not require a user token for public catalog/cart operations.
+schemes:
+- name: shopify-customer-account-oidc
+  type: openIdConnect
+  openIdConnectUrl: https://grubblyfarms.com/.well-known/openid-configuration
+  issuer: https://shopify.com/authentication/14073744
+  sources: [well-known/grubbly-farms-openid-configuration.json]
+- name: shopify-customer-account-oauth2
+  type: oauth2
+  flows:
+  - flow: authorizationCode
+    authorizationUrl: https://account.grubblyfarms.com/authentication/oauth/authorize
+    tokenUrl: https://account.grubblyfarms.com/authentication/oauth/token
+    codeChallengeMethod: S256
+    scopes:
+    - openid
+    - email
+    - customer-account-api:full
+    - customer-account-mcp-api:full
+  grant_types_supported:
+  - authorization_code
+  - refresh_token
+  - 'urn:ietf:params:oauth:grant-type:jwt-bearer'
+  jwks_uri: https://account.grubblyfarms.com/authentication/.well-known/jwks.json
+  sources: [well-known/grubbly-farms-oauth-authorization-server.json]
