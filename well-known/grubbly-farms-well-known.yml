@@ -1,0 +1,27 @@
+generated: '2026-07-19'
+method: searched
+source: https://grubblyfarms.com/.well-known/
+host: https://grubblyfarms.com
+notes: >-
+  Grubbly Farms runs on Shopify. The openid-configuration and oauth-authorization-server
+  documents are served for the Shopify Customer Account identity surface (issuer
+  https://shopify.com/authentication/14073744; endpoints on account.grubblyfarms.com).
+  The /llms.txt path returns HTTP 200 but is a Shopify generic error page (not a real
+  llms.txt), so it is recorded as absent. security.txt, api-catalog, and ai-plugin.json
+  are not published.
+documents:
+- path: /.well-known/openid-configuration
+  status: 200
+  file: grubbly-farms-openid-configuration.json
+- path: /.well-known/oauth-authorization-server
+  status: 200
+  file: grubbly-farms-oauth-authorization-server.json
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/api-catalog
+  status: 404
+- path: /.well-known/ai-plugin.json
+  status: 404
+- path: /llms.txt
+  status: 200
+  note: Shopify generic error page, not a valid llms.txt

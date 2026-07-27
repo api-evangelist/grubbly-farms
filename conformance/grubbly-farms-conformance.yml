@@ -1,0 +1,31 @@
+generated: '2026-07-19'
+method: searched
+source: https://grubblyfarms.com/.well-known/openid-configuration
+standards:
+- id: oauth2
+  conforms: true
+  evidence: >-
+    oauth-authorization-server metadata (RFC 8414) published at
+    /.well-known/oauth-authorization-server with authorization_endpoint, token_endpoint,
+    and authorization_code + refresh_token grant types.
+- id: oidc
+  conforms: true
+  evidence: >-
+    openid-configuration published at /.well-known/openid-configuration with issuer,
+    jwks_uri, RS256 id_token signing, and openid scope.
+- id: rfc8414-oauth-authorization-server-metadata
+  conforms: true
+  evidence: /.well-known/oauth-authorization-server returns 200 with valid AS metadata.
+- id: oauth2-pkce
+  conforms: true
+  evidence: code_challenge_methods_supported includes S256.
+- id: mcp
+  conforms: true
+  evidence: >-
+    Live JSON-RPC 2.0 Model Context Protocol server at https://grubblyfarms.com/api/mcp;
+    tools/list returns five tools. Customer-account-mcp-api:full scope advertised.
+- id: ucp-commerce
+  conforms: true
+  evidence: >-
+    Storefront MCP tool responses declare UCP (Universal Commerce Protocol) capability
+    profiles, e.g. dev.ucp.shopping.catalog.search.

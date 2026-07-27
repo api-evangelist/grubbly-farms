@@ -1,7 +1,16 @@
 aid: grubbly-farms
 name: Grubbly Farms
-description: Grubbly Farms is a company surfaced as a portfolio company of techstars and added to the
-  API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  Grubbly Farms is a direct-to-consumer backyard-poultry brand that sells chicken and
+  duck feed, treats, supplements, and coop supplies made with dried black soldier fly
+  grubs raised on upcycled food surplus as a sustainable protein source. The storefront
+  runs on Shopify and, like other Shopify merchants, exposes a real machine-consumable
+  surface: a hosted Storefront MCP server at /api/mcp (product catalog search, cart
+  management, product detail lookup, and shop-policy/FAQ retrieval) and a Shopify Customer
+  Account identity surface published through OpenID Connect / OAuth 2.0 discovery documents
+  (authorization-code with PKCE), including Shopify's customer-account-api and
+  customer-account-mcp-api scopes. This profile captures that discoverable agent and
+  identity surface rather than a traditional developer-published REST API.
 url: https://raw.githubusercontent.com/api-evangelist/grubbly-farms/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,12 +18,53 @@ x-backed-by:
 - techstars
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-19'
+image: https://cdn.shopify.com/s/files/1/1407/3744/files/MicrosoftTeams-image_5.png?v=1743713875
 tags:
 - Company
-apis: []
+- E-Commerce
+- Retail
+- Consumer Packaged Goods
+- Pet & Animal
+- Poultry
+- Sustainability
+- Shopify
+- MCP
+- Agentic Commerce
+apis:
+- name: Grubbly Farms Storefront (Shopify MCP & Customer Account)
+  description: >-
+    The machine-consumable surface of the Grubbly Farms Shopify storefront: a hosted
+    Storefront MCP server for agentic product discovery and cart/checkout, plus a
+    Customer Account OpenID Connect / OAuth 2.0 identity surface.
+  humanURL: https://grubblyfarms.com/
+  baseURL: https://grubblyfarms.com/api/mcp
+  tags:
+  - MCP
+  - Commerce
+  - Shopify
+  - Identity
+  properties:
+  - type: MCPServer
+    url: mcp/grubbly-farms-mcp.yml
+  - type: Authentication
+    url: authentication/grubbly-farms-authentication.yml
+  - type: OAuthScopes
+    url: scopes/grubbly-farms-scopes.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
@@ -23,3 +73,34 @@ maintainers:
 common:
 - type: Website
   url: https://grubblyfarms.com/
+- type: Support
+  url: https://help.grubblyfarms.com/en-US
+- type: Blog
+  url: https://grubblyfarms.com/blogs/the-flyer
+- type: SignUp
+  url: https://account.grubblyfarms.com/
+- type: Login
+  url: https://account.grubblyfarms.com/
+- type: TermsOfService
+  url: https://grubblyfarms.com/policies/terms-of-service
+- type: PrivacyPolicy
+  url: https://grubblyfarms.com/policies/privacy-policy
+- type: MCPServer
+  url: mcp/grubbly-farms-mcp.yml
+- type: WellKnown
+  url: well-known/grubbly-farms-well-known.yml
+- type: Authentication
+  url: authentication/grubbly-farms-authentication.yml
+- type: OpenIDConnect
+  url: well-known/grubbly-farms-openid-configuration.json
+- type: OAuthScopes
+  url: scopes/grubbly-farms-scopes.yml
+- type: Conformance
+  url: conformance/grubbly-farms-conformance.yml
+- type: DomainSecurity
+  url: security/grubbly-farms-domain-security.yml
+x-enrichment:
+  date: '2026-07-19'
+  status: backfilled
+  pass: local-v1
+  note: backfilled from .gitignore signal + verified work evidence
