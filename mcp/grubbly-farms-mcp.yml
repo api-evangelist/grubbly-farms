@@ -9,32 +9,33 @@ server:
   protocol: mcp
   jsonrpc: '2.0'
   vendor: Shopify Storefront MCP
-  notes: >-
-    Live hosted Shopify Storefront MCP server. tools/list was fetched over JSON-RPC 2.0
-    on 2026-07-19 and returned the five tools below verbatim. Responses conform to the
-    UCP (Universal Commerce Protocol) capability profiles (e.g. dev.ucp.shopping.catalog.search).
-    This is Shopify's storefront agent surface for the Grubbly Farms store, not a
-    provider-authored MCP server.
+  notes: Live hosted Shopify Storefront MCP server. tools/list was fetched over JSON-RPC 2.0 on 2026-07-19
+    and returned the five tools below verbatim. Responses conform to the UCP (Universal Commerce Protocol)
+    capability profiles (e.g. dev.ucp.shopping.catalog.search). This is Shopify's storefront agent surface
+    for the Grubbly Farms store, not a provider-authored MCP server.
 tools:
 - name: search_catalog
-  description: >-
-    Search for products from the online store, hosted on Shopify. Supports natural-language
-    queries and/or filter criteria; results are paginated via pagination.cursor. Conforms
-    to the UCP catalog search capability (dev.ucp.shopping.catalog.search).
+  description: Search for products from the online store, hosted on Shopify. Supports natural-language
+    queries and/or filter criteria; results are paginated via pagination.cursor. Conforms to the UCP catalog
+    search capability (dev.ucp.shopping.catalog.search).
 - name: get_cart
-  description: >-
-    Get the cart including items, shipping options, discount info, and checkout url for a
-    given cart id.
+  description: Get the cart including items, shipping options, discount info, and checkout url for a given
+    cart id.
 - name: update_cart
-  description: >-
-    Perform updates to a cart, including adding/removing/updating line items, buyer
-    information, shipping details, discount codes, gift cards and notes in one consolidated
-    call. Shipping options become available after adding items and a delivery address.
-    When creating a new cart, only addItems is required.
+  description: Perform updates to a cart, including adding/removing/updating line items, buyer information,
+    shipping details, discount codes, gift cards and notes in one consolidated call. Shipping options
+    become available after adding items and a delivery address. When creating a new cart, only addItems
+    is required.
 - name: search_shop_policies_and_faqs
-  description: >-
-    Used to get facts about the store's policies, products, or services.
+  description: Used to get facts about the store's policies, products, or services.
 - name: get_product_details
-  description: >-
-    Look up a product by ID. Pass the 'options' parameter to select a specific variant for
+  description: Look up a product by ID. Pass the 'options' parameter to select a specific variant for
     the product card. Without options, the first available variant is returned.
+deployment:
+  mode: remote
+  endpoint: https://grubblyfarms.com/api/mcp
+  verified: probed
+  probe: live
+  tools: 5
+  checked: '2026-08-12'
+  source: catalog MCP census
