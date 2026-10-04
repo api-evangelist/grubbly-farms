@@ -76,6 +76,9 @@ apis:
     url: authentication/grubbly-farms-authentication.yml
   - type: OAuthScopes
     url: scopes/grubbly-farms-scopes.yml
+  x-surface: platform-generated
+  x-platform: shopify
+  x-platform-surface: storefront-mcp
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
