@@ -64,6 +64,101 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Grubbly Farms is a company surfaced as a portfolio company of techstars and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+Grubbly Farms is a direct-to-consumer backyard-poultry brand that sells chicken and duck feed, treats, supplements, and coop supplies made with dried black soldier fly grubs raised on upcycled food surplus as a sustainable protein source. The storefront runs on Shopify and, like other Shopify merchants, exposes a real machine-consumable surface: a hosted Storefront MCP server at /api/mcp (product catalog search, cart management, product detail lookup, and shop-policy/FAQ retrieval) and a Shopify Customer Account identity surface published through OpenID Connect / OAuth 2.0 discovery documents (authorization-code with PKCE), including Shopify's customer-account-api and customer-account-mcp-api scopes. This profile captures that discoverable agent and identity surface rather than a traditional developer-published REST API.
 
-Backed by: techstars — https://grubblyfarms.com/
+**Areas:** Company · E-Commerce · Retail · Consumer Packaged Goods · Pet & Animal · Poultry · Sustainability · Shopify · MCP · Agentic Commerce
+
+## Grubbly Farms on APIs.io
+
+Everything profiled for Grubbly Farms is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/grubbly-farms/](https://apis.io/providers/grubbly-farms/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [Grubbly Farms Storefront (Shopify MCP & Customer Account)](https://apis.io/apis/grubbly-farms/grubbly-farms-storefront-shopify-mcp-customer-account/) — The machine-consumable surface of the Grubbly Farms Shopify storefront: a hosted Storefront MCP server for agentic product discovery and cart/checkout, plus…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [grubbly-farms-storefront](https://apis.io/servers/grubbly-farms/grubbly-farms-storefront/)
+
+#### Security (2)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Grubbly Farms Authentication](https://apis.io/security/grubbly-farms/grubbly-farms-authentication/)
+- [Grubbly Farms Domain Security](https://apis.io/security/grubbly-farms/grubbly-farms-domain-security/)
+
+#### OAuth scopes (1)
+
+The permissions the API asks for.
+
+- [Grubbly Farms Scopes](https://apis.io/scopes/grubbly-farms/grubbly-farms-scopes/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://grubblyfarms.com/)
+- [Sign up](https://account.grubblyfarms.com/)
+- [Support](https://help.grubblyfarms.com/en-US)
+- [Blog](https://grubblyfarms.com/blogs/the-flyer)
+- [Terms of service](https://grubblyfarms.com/policies/terms-of-service)
+- [Privacy policy](https://grubblyfarms.com/policies/privacy-policy)
+
+## API Evangelist rating
+
+**Kin Score 22.5** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 68.3 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 19.0 |
+| Access clarity | 34.2 |
+
+**Agent readiness 12.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | platform (partial credit) |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 34.3** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/grubbly-farms/](https://apis.io/providers/grubbly-farms/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Grubbly Farms: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/grubbly-farms/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
